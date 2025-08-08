@@ -64,3 +64,12 @@
   cursor: pointer;
   font-weight: 700;
 }
+
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  margin: 0 auto 3rem auto;
+  max-width: 1200px;
+}
