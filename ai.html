@@ -1,1 +1,85 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI & GPTs | MacaroniandBeans</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="main.js"></script>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-left">
+      <img src="assets/macnbeans.png" alt="MacaroniandBeans logo" class="logo" />
+      <span class="site-title">MacaroniandBeans</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="scripts.html">Scripts</a></li>
+      <li><a href="ai.html">AI & GPTs</a></li>
+      <li>
+        <div class="contact-dropdown">
+          <button id="contactBtn" type="button">Contact</button>
+          <div class="dropdown-content" id="contactOptions">
+            <a href="#" onclick="showContact('discord')">Discord</a>
+            <a href="#" onclick="showContact('email')">Email</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <button class="darkmode-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌓</button>
+  </nav>
+
+  <h2 class="section-title">AI & Custom GPT Projects</h2>
+
+  <div class="card-list">
+    <!-- EXAMPLE AI PROJECT CARD 1 -->
+    <div class="card">
+      <div class="video-container">
+        <!-- Example YouTube embed, or swap for a static image -->
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="card-content">
+        <h3>Roleplay Copilot GPT</h3>
+        <p>An AI GPT trained for FiveM/GTA RP servers. Custom roleplay logic, handles character memory, and server-specific commands.</p>
+        <div class="tech-stack">
+          <span class="tech-tag">OpenAI</span>
+          <span class="tech-tag">Prompt Engineering</span>
+          <span class="tech-tag">JavaScript</span>
+        </div>
+        <a href="https://github.com/MacaroniandBeans/roleplay-copilot-gpt" class="github-btn" target="_blank" rel="noopener">Get on GitHub</a>
+      </div>
+    </div>
+
+    <!-- EXAMPLE AI PROJECT CARD 2 -->
+    <div class="card">
+      <div class="video-container">
+        <img src="assets/ai-demo.png" alt="AI Demo Screenshot" />
+      </div>
+      <div class="card-content">
+        <h3>Discord Chatbot AI</h3>
+        <p>Custom AI chatbot for Discord servers with context memory and role management. Supports FiveM integrations and slash commands.</p>
+        <div class="tech-stack">
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">Discord.js</span>
+          <span class="tech-tag">AI/ML</span>
+        </div>
+        <a href="https://github.com/MacaroniandBeans/discord-chatbot-ai" class="github-btn" target="_blank" rel="noopener">Get on GitHub</a>
+      </div>
+    </div>
+
+    <!-- Add more AI project cards here -->
+  </div>
+
+  <!-- Contact Modal -->
+  <div id="contactModal" class="contact-modal">
+    <div class="contact-modal-content">
+      <span id="closeContactModal" class="close">&times;</span>
+      <div id="contactDetails"></div>
+    </div>
+  </div>
+</body>
+</html>
