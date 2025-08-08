@@ -10,8 +10,22 @@
   <script defer src="main.js"></script>
 </head>
 <body>
-  <nav>
-    <!-- ... same nav as above ... -->
+    <nav>
+  <div class="nav-left">
+    <img src="assets/macnbeans.png" alt="MacaroniandBeans logo" class="logo" />
+    <span class="site-title">MacaroniandBeans</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="scripts.html">Scripts</a></li>
+    <li><a href="ai.html">AI & GPTs</a></li>
+    <li>
+      <div class="contact-dropdown">
+        <button id="contactBtn" type="button">Contact</button>
+        <div class="dropdown-content" id="contactOptions">
+          <a href="#" onclick="showContact('discord')">Discord</a>
+          <a href="#" onclick
+
   </nav>
   <h2 class="section-title">Script Showcase</h2>
   <div class="card-list" id="scripts-list"></div>
