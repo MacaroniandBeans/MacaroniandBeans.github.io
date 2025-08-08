@@ -15,6 +15,6 @@ window.scripts = [
     tech: ["Lua", "FiveM", "HTML", "CSS"],
     description: "Customizable, minimal vehicle HUD for immersive gameplay."
   }
-  // add more scripts!
+  
 ];
 
