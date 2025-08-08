@@ -42,9 +42,9 @@ document.addEventListener("DOMContentLoaded", function() {
     contactModal.style.display = 'block';
     contactOptions.classList.remove('show');
     if (method === 'discord') {
-      contactDetails.innerHTML = `<strong>Discord:</strong> MacaroniandBeans#0001 <br><a href="https://discord.com/users/your-discord-id" target="_blank">Open Discord</a>`;
+      contactDetails.innerHTML = `<strong>Discord:</strong> J.hov#0001 <br><a href="https://discord.com/users/604654964152991754" target="_blank">Open Discord</a>`;
     } else if (method === 'email') {
-      contactDetails.innerHTML = `<strong>Email:</strong> <a href="mailto:your@email.com">your@email.com</a>`;
+      contactDetails.innerHTML = `<strong>Email:</strong> <a href="mailto:macaroniandbeansgaming@gmail.com">macaroniandbeansgaming@gmail.com</a>`;
     }
   };
 
