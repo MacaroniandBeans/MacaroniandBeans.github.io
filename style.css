@@ -1,1 +1,66 @@
 
+.contact-dropdown {
+  position: relative;
+  display: inline-block;
+}
+.contact-dropdown button {
+  background: var(--gradient);
+  color: #101010;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 1.05rem;
+  box-shadow: var(--glow-orange);
+  transition: background var(--transition), color var(--transition);
+}
+.contact-dropdown button:hover { background: var(--red); color: #fff; }
+.contact-dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background: var(--card-bg);
+  box-shadow: 0 0 18px #000a;
+  border-radius: 8px;
+  min-width: 140px;
+  z-index: 1001;
+}
+.contact-dropdown .dropdown-content.show { display: block; }
+.contact-dropdown .dropdown-content a {
+  color: var(--text);
+  padding: 0.7rem 1rem;
+  display: block;
+  text-decoration: none;
+  transition: background 0.2s;
+  border-radius: 8px;
+}
+.contact-dropdown .dropdown-content a:hover { background: var(--orange); color: #111; }
+
+.contact-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(16,14,17,0.85);
+  align-items: center;
+  justify-content: center;
+}
+.contact-modal-content {
+  background: var(--card-bg);
+  margin: 10% auto;
+  padding: 2rem 2.5rem;
+  border-radius: 18px;
+  width: 300px;
+  color: var(--text);
+  box-shadow: 0 0 28px #000a;
+  position: relative;
+  text-align: center;
+}
+.contact-modal .close {
+  position: absolute; right: 18px; top: 8px;
+  font-size: 2rem;
+  color: var(--red);
+  cursor: pointer;
+  font-weight: 700;
+}
