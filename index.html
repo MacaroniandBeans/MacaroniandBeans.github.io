@@ -1,362 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MacaroniandBeans</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --yellow: #ffdb47;
-      --orange: #ff8900;
-      --red: #f73838;
-      --gradient: linear-gradient(90deg, #ffdb47, #ff8900, #f73838 90%);
-      --dark-bg: #111013;
-      --card-bg: #18171b;
-      --text: #fff;
-      --text-secondary: #bdbdbd;
-      --glow-yellow: 0 0 18px #ffdb47aa;
-      --glow-orange: 0 0 18px #ff8900aa;
-      --glow-red: 0 0 18px #f73838aa;
-      --transition: 0.2s cubic-bezier(.4,0,.2,1);
-    }
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: var(--dark-bg);
-      color: var(--text);
-      font-family: 'Inter', 'Montserrat', sans-serif;
-      scroll-behavior: smooth;
-    }
-    body {
-      min-height: 100vh;
-    }
-    /* Navigation */
-    nav {
-      background: rgba(17,16,19, 0.96);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.7rem 2rem;
-      border-bottom: 1px solid #232228;
-    }
-    nav img.logo {
-      height: 48px;
-      width: 48px;
-      border-radius: 12px;
-      background: var(--gradient);
-      box-shadow: var(--glow-orange);
-      margin-right: 0.8rem;
-    }
-    nav .site-title {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2rem;
-      font-weight: 700;
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-      margin: 0;
-      padding: 0;
-    }
-    nav li {
-      display: inline-block;
-    }
-    nav a {
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color var(--transition);
-      font-size: 1.1rem;
-      padding: 0.25rem 0.5rem;
-      border-radius: 6px;
-    }
-    nav a:hover, nav a:focus {
-      color: var(--yellow);
-      background: #242326;
-    }
-    /* Hero Section */
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 60vh;
-      text-align: center;
-      padding-top: 3rem;
-    }
-    .hero .logo-big {
-      width: 120px;
-      height: 120px;
-      object-fit: contain;
-      margin-bottom: 1.5rem;
-      border-radius: 22px;
-      background: var(--gradient);
-      box-shadow: 0 0 60px 10px #ffdb4744, 0 0 120px 24px #ff890022;
-    }
-    .hero h1 {
-      font-size: 2.7rem;
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin: 0;
-      margin-bottom: 1rem;
-      font-family: 'Montserrat', sans-serif;
-      letter-spacing: 1.5px;
-    }
-    .hero p {
-      color: var(--text-secondary);
-      font-size: 1.25rem;
-      max-width: 580px;
-      margin: 0 auto 2.5rem auto;
-    }
-    /* Section Titles */
-    .section-title {
-      font-size: 2rem;
-      margin-top: 2.5rem;
-      margin-bottom: 1.5rem;
-      font-family: 'Montserrat', sans-serif;
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      letter-spacing: 1px;
-      text-align: center;
-    }
-    /* Cards */
-    .card-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-      margin: 0 auto 3rem auto;
-      max-width: 1100px;
-    }
-    .card {
-      background: var(--card-bg);
-      border-radius: 16px;
-      box-shadow: 0 2px 24px 0 #000c  , 0 0 16px 0 #ff890044;
-      overflow: hidden;
-      transition: transform var(--transition), box-shadow var(--transition);
-      width: 340px;
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      min-height: 410px;
-      position: relative;
-    }
-    .card:hover {
-      transform: translateY(-7px) scale(1.04);
-      box-shadow: 0 4px 48px 0 #000d, var(--glow-yellow);
-    }
-    .card .video-container {
-      width: 100%;
-      height: 190px;
-      background: #222;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-    .card iframe, .card video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border: none;
-      background: #000;
-    }
-    .card-content {
-      padding: 1.2rem 1.1rem 1rem 1.1rem;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    .card .tech-stack {
-      margin-top: 0.9rem;
-      margin-bottom: 0.6rem;
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
-    .tech-tag {
-      font-size: 0.91rem;
-      background: var(--gradient);
-      color: #101010;
-      font-weight: 600;
-      border-radius: 6px;
-      padding: 0.2rem 0.7rem;
-      box-shadow: 0 0 8px #ffdb4788;
-      letter-spacing: 0.5px;
-    }
-    .card .github-btn {
-      margin-top: auto;
-      padding: 0.6rem 1rem;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 600;
-      background: var(--gradient);
-      color: #101010;
-      cursor: pointer;
-      box-shadow: var(--glow-orange);
-      transition: background var(--transition), box-shadow var(--transition), color var(--transition);
-      text-decoration: none;
-      text-align: center;
-      display: inline-block;
-    }
-    .card .github-btn:hover {
-      color: #fff;
-      background: var(--red);
-      box-shadow: var(--glow-red);
-    }
-    /* Contact/Links */
-    .contact-section {
-      display: flex;
-      justify-content: center;
-      gap: 2.5rem;
-      margin: 2.5rem 0 1.5rem 0;
-      flex-wrap: wrap;
-    }
-    .contact-link {
-      background: var(--gradient);
-      color: #101010;
-      font-size: 1.15rem;
-      font-weight: 700;
-      padding: 0.6rem 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 0 12px #ff890077;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      transition: background var(--transition), box-shadow var(--transition), color var(--transition);
-    }
-    .contact-link:hover, .contact-link:focus {
-      background: var(--red);
-      color: #fff;
-      box-shadow: var(--glow-red);
-    }
-    /* GitHub */
-    .github-link {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 1.17rem;
-      margin: 2rem auto 2.5rem auto;
-      background: var(--gradient);
-      color: #101010;
-      font-weight: 600;
-      padding: 0.6rem 1.3rem;
-      border-radius: 10px;
-      box-shadow: var(--glow-yellow);
-      width: fit-content;
-      text-decoration: none;
-      transition: box-shadow var(--transition), color var(--transition), background var(--transition);
-    }
-    .github-link:hover, .github-link:focus {
-      background: var(--orange);
-      color: #fff;
-      box-shadow: var(--glow-orange);
-    }
-    /* Footer */
-    footer {
-      background: #161518;
-      color: #bdbdbd;
-      text-align: center;
-      padding: 1.2rem 0 0.7rem 0;
-      font-size: 1rem;
-      letter-spacing: 0.3px;
-    }
-    /* Responsive */
-    @media (max-width: 900px) {
-      .card-list {
-        flex-direction: column;
-        align-items: center;
-      }
-      nav {
-        flex-direction: column;
-        gap: 0.8rem;
-        padding: 1rem;
-      }
-    }
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 2rem;}
-      .section-title { font-size: 1.3rem;}
-      .card { width: 97vw; min-width: unset; }
-      nav ul { gap: 1rem;}
-      nav .site-title { font-size: 1.4rem;}
-      .hero .logo-big { width: 72px; height: 72px;}
-    }
-    /* Dark mode toggle */
-    .darkmode-toggle {
-      background: var(--card-bg);
-      border: none;
-      color: var(--yellow);
-      font-size: 1.2rem;
-      border-radius: 8px;
-      padding: 0.4rem 0.9rem;
-      cursor: pointer;
-      margin-left: 2rem;
-      transition: background var(--transition), color var(--transition);
-    }
-    .darkmode-toggle:hover {
-      background: var(--orange);
-      color: #fff;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="scripts-data.js"></script>
+  <script defer src="main.js"></script>
 </head>
 <body>
-  <!-- Navigation -->
+  <!-- NAVIGATION -->
   <nav>
-    <div style="display: flex; align-items: center;">
-      <img src="macnbeans.png" alt="MacaroniandBeans logo" class="logo" />
+    <div class="nav-left">
+      <img src="assets/macnbeans.png" alt="MacaroniandBeans logo" class="logo" />
       <span class="site-title">MacaroniandBeans</span>
     </div>
-    <ul>
-      <li><a href="#showcase">Scripts</a></li>
-      <li><a href="#ai">AI & GPTs</a></li>
-      <li><a href="#contact">Contact</a></li>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="scripts.html">Scripts</a></li>
+      <li><a href="ai.html">AI & GPTs</a></li>
+      <li>
+        <div class="contact-dropdown">
+          <button id="contactBtn">Contact</button>
+          <div class="dropdown-content" id="contactOptions">
+            <a href="#" onclick="showContact('discord')">Discord</a>
+            <a href="#" onclick="showContact('email')">Email</a>
+          </div>
+        </div>
+      </li>
     </ul>
     <button class="darkmode-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌓</button>
   </nav>
-  <!-- Hero -->
+
+  <!-- HERO -->
   <section class="hero">
-    <img src="your-logo.png" alt="MacaroniandBeans logo" class="logo-big" />
+    <img src="assets/macnbeans.png" alt="MacaroniandBeans logo" class="logo-big" />
     <h1>MacaroniandBeans</h1>
     <p>
-      FiveM (GTA V RP) scripter • Custom GPT & AI Creator<br>
-      <span style="background:var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip:text; font-weight:700;">
+      FiveM (GTA V RP) scripter • Custom GPT & AI Creator
+      <br>
+      <span class="gradient-text">
         Code meets creativity. Edge meets energy.
       </span>
     </p>
-    <a href="https://github.com/yourgithub" class="github-link" target="_blank" rel="noopener">
+    <a href="https://github.com/MacaroniandBeans" class="github-link" target="_blank" rel="noopener">
       <svg height="1.2em" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle;">
         <path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.3.8-.6v-2c-3.1.7-3.8-1.3-3.8-1.3-.6-1.6-1.4-2-1.4-2-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.3 1.8 1.3 1 .1 2-.7 2.4-1.2.1-.7.4-1.2.7-1.5-2.5-.3-5.1-1.3-5.1-5.6 0-1.3.4-2.4 1.2-3.3-.1-.3-.5-1.4.1-3 0 0 1-.3 3.3 1.2A11.6 11.6 0 0 1 12 6.8c1 .004 2 .133 2.9.39C17.2 5.4 18.2 5.7 18.2 5.7c.6 1.6.2 2.7.1 3 .8.9 1.2 2 1.2 3.3 0 4.3-2.6 5.2-5.1 5.6.4.3.8 1 .8 2v3c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12C23.5 5.7 18.3.5 12 .5z"/>
       </svg>
       My GitHub
     </a>
   </section>
-  <!-- Scripts Showcase -->
-  <h2 class="section-title" id="showcase">Script Showcase</h2>
-  <div class="card-list" id="scripts-list">
-    <!-- Scripts will be rendered here by JS -->
+
+  <!-- Optional: Flashy call-to-action for SCRIPTS -->
+  <section class="cta-section">
+    <a href="scripts.html" class="cta-btn">See My Scripts</a>
+  </section>
+
+  <!-- Contact Dropdown Modal -->
+  <div id="contactModal" class="contact-modal">
+    <div class="contact-modal-content">
+      <span id="closeContactModal" class="close">&times;</span>
+      <div id="contactDetails"></div>
+    </div>
   </div>
-  <!-- AI & Custom GPTs -->
-  <h2 class="section-title" id="ai">AI & Custom GPTs</h2>
-  <div class="card-list" id="ai-list">
-    <!-- AI projects will be rendered here by JS -->
-  </div>
-  <!-- Contact Section -->
-  <h2 class="section-title" id="contact">Contact</h2>
-  <div class="contact-section">
-    <a href="https://discord.com/users/your-discord-id" class="contact-link" target="_blank" rel="noopener">
-      <svg fill="currentColor" viewBox="0 0 24 24" height="1.3em"><path d="M12 0C5.371 0 0 5.372 0 12c0 6.628 5.371 12 12 12 6.627 0 12-5.372 12-12 0-6.628-5.373-12-12-12zm5.076 18.73s-.478-.567-.872-1.071c1.737-.494 2.392-1.594 2.392-1.594-.544.363-1.06.624-1.52.8-.663.28-1.298.468-1.926.601-.406.08-.794.148-1.17.201-.756.104-1.45.08-2.05-.004-.456-.067-.851-.161-1.18-.268a8.432 8.432 0 0 1-1.041
+</body>
+</html>
