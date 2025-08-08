@@ -1,1 +1,64 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | MacaroniandBeans</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="main.js"></script>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-left">
+      <img src="assets/macnbeans.png" alt="MacaroniandBeans logo" class="logo" />
+      <span class="site-title">MacaroniandBeans</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="scripts.html">Scripts</a></li>
+      <li><a href="ai.html">AI & GPTs</a></li>
+      <li>
+        <div class="contact-dropdown">
+          <button id="contactBtn" type="button">Contact</button>
+          <div class="dropdown-content" id="contactOptions">
+            <a href="#" onclick="showContact('discord')">Discord</a>
+            <a href="#" onclick="showContact('email')">Email</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <button class="darkmode-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌓</button>
+  </nav>
+
+  <h2 class="section-title" style="margin-top:2.5rem;">Get in Touch</h2>
+  <div class="contact-section" style="flex-direction:column;align-items:center;">
+    <p style="color:var(--text-secondary);font-size:1.15rem;margin-bottom:1.5rem;">
+      Select your preferred contact method:
+    </p>
+    <div style="display:flex;gap:2rem;">
+      <a href="#" class="contact-link" onclick="showContact('discord')">
+        <svg fill="currentColor" viewBox="0 0 24 24" height="1.4em"><path d="M12 0C5.371 0 0 5.372 0 12c0 6.628 5.371 12 12 12 6.627 0 12-5.372 12-12 0-6.628-5.373-12-12-12zm5.076 18.73s-.478-.567-.872-1.071c1.737-.494 2.392-1.594 2.392-1.594-.544.363-1.06.624-1.52.8-.663.28-1.298.468-1.926.601-.406.08-.794.148-1.17.201-.756.104-1.45.08-2.05-.004-.456-.067-.851-.161-1.18-.268a8.432 8.432 0 0 1-1.041-.447c-.08-.044-.156-.09-.23-.137-.035-.025-.07-.045-.105-.07-.147-.1-.294-.202-.438-.307-.07-.052-.142-.1-.21-.155-.193-.15-.38-.314-.561-.484-.144-.133-.284-.27-.422-.408-.072-.072-.143-.144-.213-.217-1.116-1.153-2.052-2.547-2.052-4.141 0-2.332 1.783-4.236 4.234-4.236 2.453 0 4.236 1.904 4.236 4.236 0 1.594-.936 2.988-2.053 4.141-.07.073-.142.145-.213.217-.137.138-.278.275-.422.408-.18.17-.368.333-.561.484-.069.054-.14.103-.21.155-.144.105-.291.207-.438.307-.034.024-.07.044-.104.07-.075.048-.152.093-.23.137-.374.187-.765.339-1.172.447z"/></svg>
+        Discord
+      </a>
+      <a href="#" class="contact-link" onclick="showContact('email')">
+        <svg fill="currentColor" viewBox="0 0 24 24" height="1.4em"><path d="M12 12.713l-11.99-7.713h23.98l-11.99 7.713zm0 2.287l-12-7.713v13.713h24v-13.713l-12 7.713z"/></svg>
+        Email
+      </a>
+    </div>
+    <div style="margin-top:2.5rem;color:var(--text-secondary);font-size:1rem;">
+      <em>Or use the dropdown in the nav from any page.</em>
+    </div>
+  </div>
+
+  <!-- Contact Modal -->
+  <div id="contactModal" class="contact-modal">
+    <div class="contact-modal-content">
+      <span id="closeContactModal" class="close">&times;</span>
+      <div id="contactDetails"></div>
+    </div>
+  </div>
+</body>
+</html>
