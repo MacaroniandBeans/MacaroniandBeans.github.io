@@ -10,10 +10,14 @@
   <script defer src="main.js"></script>
 </head>
 <body>
-    <nav>
+<nav>
   <div class="nav-left">
-    <img src="assets/macnbeans.png" alt="MacaroniandBeans logo" class="logo" />
-    <span class="site-title">MacaroniandBeans</span>
+    <a href="index.html">
+      <img src="assets/macnbeans.png" alt="MacaroniandBeans logo" class="logo" />
+    </a>
+    <a href="index.html" class="site-title-link">
+      <span class="site-title">MacaroniandBeans</span>
+    </a>
   </div>
   <ul class="nav-links">
     <li><a href="about.html">About</a></li>
@@ -24,9 +28,14 @@
         <button id="contactBtn" type="button">Contact</button>
         <div class="dropdown-content" id="contactOptions">
           <a href="#" onclick="showContact('discord')">Discord</a>
-          <a href="#" onclick
+          <a href="#" onclick="showContact('email')">Email</a>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <button class="darkmode-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌓</button>
+</nav>
 
-  </nav>
   <h2 class="section-title">Script Showcase</h2>
   <div class="card-list" id="scripts-list"></div>
 </body>
