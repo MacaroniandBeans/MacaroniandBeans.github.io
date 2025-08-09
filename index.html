@@ -11,27 +11,32 @@
 </head>
 <body>
   <!-- NAVIGATION -->
-  <nav>
-    <div class="nav-left">
-      <img src="macnbeans.png" alt="MacaroniandBeans logo" class="logo" />
+<nav>
+  <div class="nav-left">
+    <a href="index.html">
+      <img src="assets/macnbeans.png" alt="MacaroniandBeans logo" class="logo" />
+    </a>
+    <a href="index.html" class="site-title-link">
       <span class="site-title">MacaroniandBeans</span>
-    </div>
-    <ul class="nav-links">
-      <li><a href="about.html">About</a></li>
-      <li><a href="scripts.html">Scripts</a></li>
-      <li><a href="ai.html">AI & GPTs</a></li>
-      <li>
-        <div class="contact-dropdown">
-          <button id="contactBtn">Contact</button>
-          <div class="dropdown-content" id="contactOptions">
-            <a href="#" onclick="showContact('discord')">Discord</a>
-            <a href="#" onclick="showContact('email')">Email</a>
-          </div>
+    </a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="scripts.html">Scripts</a></li>
+    <li><a href="ai.html">AI & GPTs</a></li>
+    <li>
+      <div class="contact-dropdown">
+        <button id="contactBtn" type="button">Contact</button>
+        <div class="dropdown-content" id="contactOptions">
+          <a href="#" onclick="showContact('discord')">Discord</a>
+          <a href="#" onclick="showContact('email')">Email</a>
         </div>
-      </li>
-    </ul>
-    <button class="darkmode-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌓</button>
-  </nav>
+      </div>
+    </li>
+  </ul>
+  <button class="darkmode-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌓</button>
+</nav>
+
 
   <!-- HERO -->
   <section class="hero">
